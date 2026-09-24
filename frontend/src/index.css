@@ -1,0 +1,114 @@
+:root {
+  --roast-950: #1c120b;
+  --roast-900: #2a1b12;
+  --roast-700: #4a3020;
+  --roast-500: #6f4e37;
+  --parchment: #f6f0e4;
+  --parchment-dim: #ece2cd;
+  --leaf-900: #16301f;
+  --leaf-700: #1f4a30;
+  --leaf-500: #2f6b40;
+  --gold-500: #c89b3c;
+  --gold-300: #e0bf78;
+  --ink: #241a12;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0 0 0.5em;
+  color: inherit;
+}
+
+p { margin: 0 0 1em; max-width: 62ch; }
+
+a { color: inherit; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section--tight { padding: 64px 0; }
+
+.eyebrow-note {
+  font-size: 0.95rem;
+  color: var(--gold-300);
+  margin-bottom: 0.75em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 3px;
+  border: 1.5px solid transparent;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: var(--gold-500);
+  color: var(--roast-950);
+}
+.btn--primary:hover { background: var(--gold-300); }
+
+.btn--outline {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+.btn--outline:hover { background: rgba(255,255,255,0.08); }
+
+.btn--outline-dark {
+  background: transparent;
+  border-color: var(--leaf-700);
+  color: var(--leaf-700);
+}
+.btn--outline-dark:hover { background: rgba(31,74,48,0.08); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+@media (max-width: 720px) {
+  .section { padding: 64px 0; }
+  .container { padding: 0 20px; }
+}
